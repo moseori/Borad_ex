@@ -43,4 +43,20 @@ public class BoardController {
 		rttr.addFlashAttribute("message", bno+"번 삭제함");
 		return "redirect:list";
 	}
+	
+	@GetMapping("/register")
+	public String registerform() {
+		return "board/register";
+	}
+	
+	@PostMapping("/register")
+	public String register(Board board, RedirectAttributes rttr) {
+		service.register(board);
+		rttr.addFlashAttribute("message",board.getBno()+"번 글 등록함");
+		System.out.println(board.getTitle());
+		System.out.println(board.getWriter());
+		System.out.println(board.getContents());
+		return "redirect:list";
+	}
+    
 }

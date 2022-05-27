@@ -25,4 +25,8 @@ public class BoardService {
 	public void remove(Long bno) {
 		mapper.delete(bno);
 	}
+
+	public void register(Board board) {
+		mapper.insert(board);
+	}
 }

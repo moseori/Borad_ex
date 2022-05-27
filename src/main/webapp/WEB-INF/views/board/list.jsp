@@ -25,6 +25,8 @@
 </tr>
 </c:forEach>
 </table>
+<a href="${pageContext.request.contextPath }/board/register" >글 등록</a>
+
 <c:if test="${not empty message }">
 ${message}
 </c:if>
