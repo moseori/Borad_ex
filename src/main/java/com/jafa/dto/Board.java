@@ -19,6 +19,6 @@ public class Board {
 	String contents;
 	String writer;
 	LocalDateTime regDate;
-	LocalDateTime updaDate;
+	LocalDateTime updateDate;
 
 }

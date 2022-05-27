@@ -12,7 +12,7 @@ public class TestAA {
 	public void setUp() {
 		System.out.println("=============================");
 	}
-	
+
 	@After
 	public void tear() {
 		System.out.println("***************************************");
