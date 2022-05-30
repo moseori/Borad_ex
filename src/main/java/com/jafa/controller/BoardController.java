@@ -1,7 +1,5 @@
 package com.jafa.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,9 +51,6 @@ public class BoardController {
 	public String register(Board board, RedirectAttributes rttr) {
 		service.register(board);
 		rttr.addFlashAttribute("message",board.getBno()+"번 글 등록함");
-		System.out.println(board.getTitle());
-		System.out.println(board.getWriter());
-		System.out.println(board.getContents());
 		return "redirect:list";
 	}
     
