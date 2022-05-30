@@ -9,7 +9,7 @@
 <body>
 	<%@ include file="/WEB-INF/views/layout/header.jsp"%>
 	<div class="container">
-		<form action="${pageContext.request.contextPath }/board/register" method="post">
+		<form action="${contextPath }/board/register" method="post">
 			제목 : <input type="text" name="title"><br> 
 			작성자 : <input type="text" name="writer"><br>
 			<textarea rows="20" cols="100" name="contents"></textarea> <br>

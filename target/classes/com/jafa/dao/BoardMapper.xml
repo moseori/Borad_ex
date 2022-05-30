@@ -17,7 +17,7 @@
 		title=#{title}, 
 		contents=#{contents}, 
 		writer=#{writer},
-		updateDate=#{updateDate} 
+		updateDate=now()
 		where bno=#{bno}
 	</update>
 
