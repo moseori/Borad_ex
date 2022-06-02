@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jafa.dto.Board;
 import com.jafa.dto.Criteria;
+import com.jafa.dto.PageMaker;
 import com.jafa.service.BoardService;
 
 @Controller
@@ -24,9 +25,15 @@ public class BoardController {
 	
 	@GetMapping("/list")
 	public String getBoardList(Criteria criteria, Model model) {
-		System.out.println("페이지 번호 : "+criteria.getPage());
+		PageMaker pageMaker=new PageMaker();
+		pageMaker.setCriteria(criteria);
+		pageMaker.setTotalCount(service.totalCount());
+		System.out.println("시작페이지 : " +pageMaker.getStartPage());
+		System.out.println("끝 페이지 : " +pageMaker.getEndPage());
+		
 		List<Board> list=service.getList(criteria);
 		model.addAttribute("list",list);
+		model.addAttribute("pageMaker", pageMaker);
 		return "board/list";
 	}
 

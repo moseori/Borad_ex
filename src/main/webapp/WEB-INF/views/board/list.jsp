@@ -26,6 +26,11 @@
 			</tr>
 		</c:forEach>
 	</table>
+	
+	<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="pageNum">
+	<a href="?page=${pageNum}">[${pageNum}]</a>
+	</c:forEach>
+	<br>
 	<a href="${contextPath }/board/register" class="btn btn-info">글 등록</a>
 	<c:if test="${not empty message }"> ${message} </c:if>
 </div>

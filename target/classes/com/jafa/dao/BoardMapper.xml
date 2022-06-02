@@ -9,7 +9,7 @@
 	</select>
 	
 	<select id="totalCount" resultType="Integer">
-		select count(*) from board_tbl from board_tbl
+		select count(*) from board_tbl
 	</select>
 
 	<select id="findByBno" resultType="com.jafa.dto.Board">
