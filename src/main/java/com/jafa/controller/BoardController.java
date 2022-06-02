@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jafa.dto.Board;
+import com.jafa.dto.Criteria;
 import com.jafa.service.BoardService;
 
 @Controller
@@ -22,8 +23,9 @@ public class BoardController {
 	private BoardService service;
 	
 	@GetMapping("/list")
-	public String getBoardList(Model model) {
-		List<Board> list=service.getList();
+	public String getBoardList(Criteria criteria, Model model) {
+		System.out.println("페이지 번호 : "+criteria.getPage());
+		List<Board> list=service.getList(criteria);
 		model.addAttribute("list",list);
 		return "board/list";
 	}
