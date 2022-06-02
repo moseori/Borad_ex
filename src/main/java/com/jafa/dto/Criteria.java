@@ -5,7 +5,6 @@ import lombok.Setter;
 
 public class Criteria {
 
-
 	private int page;
 	private int perPageNum;
 	
@@ -23,7 +22,8 @@ public class Criteria {
 	}
 
 	public void setPage(int page) {
-		this.page = page;
+		if (page<=0) {this.page=1; } 
+		else {this.page = page; }
 	}
 
 	public int getPageStart() {

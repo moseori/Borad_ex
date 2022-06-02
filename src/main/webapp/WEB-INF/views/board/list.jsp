@@ -27,10 +27,18 @@
 		</c:forEach>
 	</table>
 	
+	<ul class="pagination">
+	<c:if test="${pageMaker.prve}">
+	<li class="page-item">	<a href="?page=${pageMaker.startPage-1}" class="page-link"> 이전페이지</a></li>
+	</c:if>
 	<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="pageNum">
-	<a href="?page=${pageNum}">[${pageNum}]</a>
+		<li class="page-item ${param.page==pageNum?'active':'' }"><a href="?page=${pageNum}" class="page-link">${pageNum}</a></li>
 	</c:forEach>
-	<br>
+	<c:if test="${pageMaker.next}">
+		<li class="page-item"><a href="?page=${pageMaker.endPage+1}" class="page-link"> 다음페이지</a></li>
+	</c:if>
+	</ul>
+	<br> 
 	<a href="${contextPath }/board/register" class="btn btn-info">글 등록</a>
 	<c:if test="${not empty message }"> ${message} </c:if>
 </div>
