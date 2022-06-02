@@ -20,11 +20,10 @@ public class PageMaker {
 		startPage=endPage-displayPageNum+1;
 		
 		int tempEndPage=(int)Math.ceil(totalCount/(double)criteria.getPerPageNum());
-		if(endPage>tempEndPage) { endPage=tempEndPage;}
+		if(endPage>tempEndPage) endPage=tempEndPage;
 		
-		
-		prve=startPage==1? false:true;
-		next=endPage>=tempEndPage?false:true;
+		prve=startPage!=1;
+		next=endPage<tempEndPage;
 	}
 	
 	public void setTotalCount(int totalCount) {

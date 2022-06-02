@@ -1,8 +1,5 @@
 package com.jafa.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-
 public class Criteria {
 
 	private int page;

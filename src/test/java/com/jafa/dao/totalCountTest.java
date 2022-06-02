@@ -20,7 +20,7 @@ public class totalCountTest {
 
 	@Test
 	public void totalCountTest() {
-	assertEquals(411, mapper.totalCount());
+		assertEquals(411, mapper.totalCount());
 	}
 
 }
