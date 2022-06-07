@@ -28,8 +28,6 @@ public class BoardController {
 		PageMaker pageMaker=new PageMaker();
 		pageMaker.setCriteria(criteria);
 		pageMaker.setTotalCount(service.totalCount());
-		System.out.println("시작페이지 : " +pageMaker.getStartPage());
-		System.out.println("끝 페이지 : " +pageMaker.getEndPage());
 		
 		List<Board> list=service.getList(criteria);
 		model.addAttribute("list",list);
