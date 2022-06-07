@@ -28,4 +28,11 @@ public class Criteria {
 	public int getPageStart() {
 		return (this.page-1)*perPageNum;
 	}
+	
+	//TC =>{T,C}
+	//WC =>{W,C}
+	//type.split("#") LEE#CC#BB => {LEE, WCC, BB}
+	public String[] getTypeCollection() {
+		return this.type !=null?type.split(""):new String[] {};
+	}
 }
