@@ -18,5 +18,6 @@
 			<button class="btn btn-warning">수정</button>
 		</form>
 	</div>
+	<a href="${contextPath}/board/list">목록으로</a>
 </div>
 <%@ include file="/WEB-INF/views/layout/footer.jsp"%>

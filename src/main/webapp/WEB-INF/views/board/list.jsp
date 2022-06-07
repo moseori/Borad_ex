@@ -61,6 +61,7 @@
 	<a href="${contextPath }/board/register" class="btn btn-info">글 등록</a>
 	<c:if test="${not empty message }"> ${message} </c:if>
 </div>
+
 <script>
 $(function() {
 	let pageForm=$('#pageForm');
@@ -68,6 +69,12 @@ $(function() {
 		e.preventDefault();
 		console.log($(this).attr('href'));
 		pageForm.find('input[name="page"]').val($(this).attr('href'));
+		let keyword=pageForm.find('input[name="keyword"]').val();
+		if(keyword.trim()==''){
+			let pageNum=pageForm.find('input[name="page"]').val($(this).attr('href'));
+			pageForm.empty();
+			pageForm.append(pageNum);
+		}
 		$('#pageForm').submit();
 	});
 })
